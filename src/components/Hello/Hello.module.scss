@@ -63,6 +63,7 @@
           font-weight: bold;
           cursor: pointer;
           transition: 300ms;
+          border-radius: 3px;
         }
 
         .contact_btn {
@@ -74,11 +75,11 @@
             background-color: transparent;
             border: 5px solid $dark;
             color: $dark;
-            transform: translateX(20px);
+            transform: translateX(-20px);
 
-            -webkit-box-shadow: -5px 0px 20px 0px rgba(8, 76, 97, 1);
-            -moz-box-shadow: -5px 0px 20px 0px rgba(8, 76, 97, 1);
-            box-shadow: -5px 0px 20px 0px rgba(8, 76, 97, 1);
+            -webkit-box-shadow: 5px 0px 20px 0px rgba(8, 76, 97, 1);
+            -moz-box-shadow: 5px 0px 20px 0px rgba(8, 76, 97, 1);
+            box-shadow: 5px 0px 20px 0px rgba(8, 76, 97, 1);
           }
         }
 
@@ -112,8 +113,7 @@
         height: 560px;
         shape-outside: circle();
         clip-path: circle();
-        img {
-        }
+        overflow: hidden;
       }
 
       .socials {

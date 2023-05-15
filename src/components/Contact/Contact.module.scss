@@ -117,6 +117,7 @@
       font-weight: bold;
       cursor: pointer;
       transition: 300ms;
+      border-radius: 3px;
       &:hover {
         transition: 300ms;
         background-color: $dark;

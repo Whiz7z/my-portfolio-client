@@ -6,10 +6,12 @@ import Projects from "../Projects/Projects";
 import Skills from "../Skills/Skills";
 import Contact from "../Contact/Contact";
 import onceWheel from "once-wheel";
+import { useComponent } from "../../zustand/store";
 
 const MainBar = () => {
   const [element, setElement] = useState(<Hello />);
   const [scrollCount, setScrollCount] = useState(0);
+  const { setComponent, component } = useComponent((state) => state);
 
   function scrollDownHandler() {
     setScrollCount(scrollCount + 1);
@@ -33,20 +35,20 @@ const MainBar = () => {
   useEffect(() => {
     console.log(scrollCount);
     if (scrollCount < 3 && scrollCount > 0) {
-      setElement(<Hello />);
+      setComponent(<Hello />);
     } else if (3 < scrollCount && scrollCount < 6) {
-      setElement(<Projects />);
+      setComponent(<Projects />);
     } else if (6 < scrollCount && scrollCount < 9) {
-      setElement(<Skills />);
+      setComponent(<Skills />);
     } else if (9 < scrollCount && scrollCount < 12) {
-      setElement(<Contact />);
+      setComponent(<Contact />);
     } else if (scrollCount > 12) {
       setScrollCount(12);
     } else if (scrollCount <= 0) {
       setScrollCount(0);
     }
   }, [scrollCount]);
-  return <div className={styles.container}>{element}</div>;
+  return <div className={styles.container}>{component}</div>;
 };
 
 export default MainBar;

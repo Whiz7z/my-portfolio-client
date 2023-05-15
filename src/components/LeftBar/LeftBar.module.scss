@@ -29,10 +29,15 @@
       width: auto;
       justify-self: center;
       padding: 0 2px;
+
       &:hover {
         color: $lightText;
         border-bottom: 3px solid $lightText;
       }
+    }
+
+    .active {
+      border-bottom: 3px solid $lightText;
     }
   }
 }

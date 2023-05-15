@@ -42,6 +42,7 @@ const Hello = () => {
           <div className={styles.myPhoto}>
             <img alt="my" src={myPhoto} />
           </div>
+
           <div className={styles.socials}>
             <div className={`${styles.social_item} ${styles.mail}`}>
               <Mail />

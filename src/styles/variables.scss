@@ -1,3 +1,59 @@
 $dark: #084c61;
 $light: #ae7e45;
 $lightText: #c7ccdb;
+
+@mixin skill {
+  animation: shake 1s infinite;
+  position: relative;
+  cursor: pointer;
+  span {
+    display: none;
+    color: $dark;
+    position: absolute;
+  }
+
+  &:hover {
+    span {
+      transition: 300ms;
+      position: absolute;
+      display: inline-block;
+      animation: skillPop 0.3s;
+      transform: translatex(100px);
+    }
+  }
+}
+
+@keyframes skillPop {
+  0% {
+    transform: translatex(0px);
+  }
+
+  100% {
+    transform: translatex(100px);
+  }
+}
+
+@keyframes shake {
+  0% {
+    -moz-transform: rotate(2deg);
+    -webkit-transform: rotate(2deg);
+    -o-transform: rotate(2deg);
+    -ms-transform: rotate(2deg);
+    transform: rotate(2deg);
+  }
+  50% {
+    -moz-transform: rotate(-2deg);
+    -webkit-transform: rotate(-2deg);
+    -o-transform: rotate(-2deg);
+    -ms-transform: rotate(-2deg);
+    transform: rotate(-2deg);
+  }
+
+  100% {
+    -moz-transform: rotate(2deg);
+    -webkit-transform: rotate(2deg);
+    -o-transform: rotate(2deg);
+    -ms-transform: rotate(2deg);
+    transform: rotate(2deg);
+  }
+}

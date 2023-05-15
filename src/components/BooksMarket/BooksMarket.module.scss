@@ -1,0 +1,134 @@
+@import "../../styles//variables.scss";
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: hsla(33, 43%, 48%, 0.65);
+  display: grid;
+  .content {
+    border-radius: 10px;
+    width: 1360px;
+    height: 900px;
+    background-color: $dark;
+    justify-self: center;
+    align-self: center;
+    display: grid;
+    border: 7px solid $lightText;
+    .img_blocks {
+      width: 1300px;
+      column-gap: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      justify-self: center;
+      margin-top: 50px;
+      .img {
+        width: 420px;
+        img {
+        }
+      }
+    }
+
+    .info {
+      color: $light;
+      font-weight: bold;
+      display: grid;
+      width: 1260px;
+      justify-self: center;
+      h1 {
+        font-size: 3.2rem;
+        justify-self: center;
+      }
+
+      p {
+        font-size: 1.8rem;
+        justify-self: start;
+
+        span {
+          background-color: $light;
+          color: $dark;
+          padding: 0 3px;
+        }
+      }
+    }
+
+    .btns {
+      display: grid;
+      width: 1260px;
+      grid-template-columns: 1fr 1fr 1fr;
+      justify-self: center;
+      align-self: center;
+
+      .btn {
+        border-radius: 3px;
+        font-size: 3rem;
+        color: $dark;
+        background-color: $light;
+        border: none;
+        width: 200px;
+        height: 60px;
+        text-align: center;
+        line-height: 62px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 300ms;
+      }
+
+      .btn_close {
+        justify-self: center;
+        line-height: 55px;
+        border: 5px solid transparent;
+        &:hover {
+          transition: 300ms;
+          background-color: transparent;
+          border: 5px solid $light;
+          color: $light;
+          transform: translateX(-20px);
+
+          -webkit-box-shadow: -5px 0px 20px 0px rgba(8, 76, 97, 1);
+          -moz-box-shadow: -5px 0px 20px 0px rgba(8, 76, 97, 1);
+          box-shadow: -5px 0px 20px 0px rgba(8, 76, 97, 1);
+        }
+      }
+
+      .git {
+        justify-self: center;
+        cursor: pointer;
+
+        svg {
+          width: 70px;
+          height: 70px;
+          fill: $light;
+          transition: 300ms;
+        }
+
+        svg {
+          &:hover {
+            transition: 300ms;
+            fill: #181717;
+          }
+        }
+      }
+
+      .btn_link {
+        justify-self: center;
+        border: 5px solid transparent;
+        line-height: 55px;
+        text-align: center;
+        &:hover {
+          transition: 300ms;
+          background-color: transparent;
+          border: 5px solid $light;
+          color: $light;
+          transform: translateX(20px);
+
+          -webkit-box-shadow: -5px 0px 20px 0px rgba(8, 76, 97, 1);
+          -moz-box-shadow: -5px 0px 20px 0px rgba(8, 76, 97, 1);
+          box-shadow: -5px 0px 20px 0px rgba(8, 76, 97, 1);
+        }
+      }
+    }
+  }
+}

@@ -27,20 +27,38 @@
   .content {
     justify-self: center;
     align-self: center;
+    justify-items: center;
     transition: 400ms opacity ease-in-out;
-    overflow: hidden;
 
     animation: slide 1s;
-    width: 1320px;
+
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 10px;
+    column-gap: 30px;
     .project {
+      height: auto;
+      width: auto;
+      transition: 300ms;
+      border: 7px solid $lightText;
+      &:hover {
+        transition: 300ms;
+        -webkit-box-shadow: 10px -10px 18px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 10px -10px 18px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 10px -10px 18px 0px rgba(0, 0, 0, 0.75);
+        transform: translate(-10px, 10px);
+
+        .img_block {
+          border-radius: none;
+        }
+      }
+
+      justify-self: center;
+      cursor: pointer;
       .img_block {
         width: 420px;
-        border-top: 5px solid $dark;
-        border-left: 5px solid $dark;
-        border-right: 5px solid $dark;
+
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
         img {
         }
       }
@@ -51,6 +69,8 @@
         background-color: $dark;
         color: $light;
         display: grid;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
         h2 {
           font-size: 2.8rem;
           width: 380px;
