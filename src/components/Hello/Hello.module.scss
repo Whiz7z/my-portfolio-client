@@ -1,0 +1,204 @@
+@import "../../styles//variables.scss";
+
+.container {
+  width: 95%;
+  height: 95%;
+  align-self: center;
+  justify-self: center;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  .tag {
+    font-weight: bold;
+    font-size: 4.2rem;
+    color: $lightText;
+    transition: 400ms opacity ease-in-out;
+
+    animation: opacity 1s;
+  }
+
+  .first_tag {
+    align-self: flex-start;
+  }
+
+  .last_tag {
+    align-self: flex-end;
+  }
+
+  .content {
+    width: 100%;
+    color: $dark;
+    padding-left: 80px;
+    display: grid;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    transition: 400ms opacity ease-in-out;
+
+    animation: slide 1s;
+    .info {
+      height: 100%;
+      display: grid;
+      align-self: center;
+      align-items: center;
+      h1 {
+        font-size: 5rem;
+      }
+
+      p {
+        font-size: 2.9rem;
+        font-weight: bold;
+      }
+
+      .btns {
+        display: grid;
+        width: 550px;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 30px;
+        .btn {
+          width: 260px;
+          height: 70px;
+
+          border: none;
+          font-size: 3.2rem;
+          font-weight: bold;
+          cursor: pointer;
+          transition: 300ms;
+        }
+
+        .contact_btn {
+          color: $light;
+          background-color: $dark;
+          border: 5px solid transparent;
+          &:hover {
+            transition: 300ms;
+            background-color: transparent;
+            border: 5px solid $dark;
+            color: $dark;
+            transform: translateX(20px);
+
+            -webkit-box-shadow: -5px 0px 20px 0px rgba(8, 76, 97, 1);
+            -moz-box-shadow: -5px 0px 20px 0px rgba(8, 76, 97, 1);
+            box-shadow: -5px 0px 20px 0px rgba(8, 76, 97, 1);
+          }
+        }
+
+        .cv_btn {
+          color: $dark;
+          background-color: transparent;
+          border: 5px solid $dark;
+          &:hover {
+            transition: 300ms;
+            background-color: $dark;
+            border: 5px solid transparent;
+            color: $light;
+            transform: translateX(20px);
+
+            -webkit-box-shadow: -5px 0px 20px 0px rgba(8, 76, 97, 1);
+            -moz-box-shadow: -5px 0px 20px 0px rgba(8, 76, 97, 1);
+            box-shadow: -5px 0px 20px 0px rgba(8, 76, 97, 1);
+          }
+        }
+      }
+    }
+
+    .myPhoto_section {
+      row-gap: 35px;
+      display: grid;
+      width: 100%;
+      align-content: center;
+      .myPhoto {
+        justify-self: center;
+        width: 560px;
+        height: 560px;
+        shape-outside: circle();
+        clip-path: circle();
+        img {
+        }
+      }
+
+      .socials {
+        display: grid;
+        width: 420px;
+        justify-self: center;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+        .social_item {
+          justify-self: center;
+          svg {
+            cursor: pointer;
+            transition: 300ms;
+            width: 50px;
+          }
+        }
+
+        .mail {
+          svg {
+            &:hover {
+              fill: #ea4335;
+              transition: 300ms;
+            }
+          }
+        }
+        .telegram {
+          svg {
+            &:hover {
+              transition: 300ms;
+              fill: #26a5e4;
+            }
+          }
+        }
+
+        .linkedIn {
+          svg {
+            &:hover {
+              transition: 300ms;
+              fill: #0a66c2;
+            }
+          }
+        }
+
+        .insta {
+          svg {
+            &:hover {
+              transition: 300ms;
+              fill: #e4405f;
+            }
+          }
+        }
+
+        .git {
+          svg {
+            &:hover {
+              transition: 300ms;
+              fill: $dark;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translatex(-2%);
+  }
+  50% {
+    transform: translatex(5%);
+  }
+  100% {
+    transform: translatex(0%);
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0%;
+  }
+  50% {
+    opacity: 50%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}

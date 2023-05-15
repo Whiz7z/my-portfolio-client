@@ -1,0 +1,156 @@
+@import "../../styles//variables.scss";
+.container {
+  width: 95%;
+  height: 95%;
+  align-self: center;
+  justify-self: center;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  .tag {
+    font-weight: bold;
+    font-size: 4.2rem;
+    color: $lightText;
+    transition: 400ms opacity ease-in-out;
+
+    animation: opacity 1s;
+  }
+
+  .first_tag {
+    align-self: flex-start;
+  }
+
+  .last_tag {
+    align-self: flex-end;
+  }
+
+  .content {
+    justify-self: center;
+    align-self: center;
+    transition: 400ms opacity ease-in-out;
+    overflow: hidden;
+    height: 100%;
+    animation: slide 1s;
+
+    display: grid;
+
+    h1 {
+      font-size: 4.8rem;
+      color: $dark;
+      text-align: center;
+      justify-self: center;
+      align-self: center;
+      position: relative;
+      top: -100px;
+    }
+
+    .socials {
+      display: grid;
+      width: 870px;
+      justify-self: center;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+      .social_item {
+        justify-self: center;
+        svg {
+          cursor: pointer;
+          transition: 300ms;
+          width: 90px;
+        }
+      }
+
+      .mail {
+        svg {
+          &:hover {
+            fill: #ea4335;
+            transition: 300ms;
+          }
+        }
+      }
+      .telegram {
+        svg {
+          &:hover {
+            transition: 300ms;
+            fill: #26a5e4;
+          }
+        }
+      }
+
+      .linkedIn {
+        svg {
+          &:hover {
+            transition: 300ms;
+            fill: #0a66c2;
+          }
+        }
+      }
+
+      .insta {
+        svg {
+          &:hover {
+            transition: 300ms;
+            fill: #e4405f;
+          }
+        }
+      }
+
+      .git {
+        svg {
+          &:hover {
+            transition: 300ms;
+            fill: $dark;
+          }
+        }
+      }
+    }
+
+    .cv_btn {
+      color: $dark;
+      background-color: $light;
+      border: 5px solid $dark;
+      justify-self: center;
+      width: 260px;
+      height: 70px;
+
+      font-size: 3.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 300ms;
+      &:hover {
+        transition: 300ms;
+        background-color: $dark;
+        border: 5px solid transparent;
+        color: $light;
+        transform: translateX(20px);
+
+        -webkit-box-shadow: -5px 0px 20px 0px rgba(8, 76, 97, 1);
+        -moz-box-shadow: -5px 0px 20px 0px rgba(8, 76, 97, 1);
+        box-shadow: -5px 0px 20px 0px rgba(8, 76, 97, 1);
+      }
+    }
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translatex(-2%);
+  }
+  50% {
+    transform: translatex(5%);
+  }
+  100% {
+    transform: translatex(0%);
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0%;
+  }
+  50% {
+    opacity: 50%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}

@@ -1,0 +1,123 @@
+@import "../../styles//variables.scss";
+.container {
+  width: 95%;
+  height: 95%;
+  align-self: center;
+  justify-self: center;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  .tag {
+    font-weight: bold;
+    font-size: 4.2rem;
+    color: $lightText;
+    transition: 400ms opacity ease-in-out;
+
+    animation: opacity 1s;
+  }
+
+  .first_tag {
+    align-self: flex-start;
+  }
+
+  .last_tag {
+    align-self: flex-end;
+  }
+
+  .content {
+    justify-self: center;
+    align-self: center;
+    transition: 400ms opacity ease-in-out;
+    overflow: hidden;
+
+    animation: slide 1s;
+    width: 1320px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10px;
+
+    .collumn {
+      width: 600px;
+      display: grid;
+      grid-template-columns: repeat(10, 100px);
+      grid-template-rows: repeat(5, 60px);
+      row-gap: 35px;
+      .skill {
+        width: 200px;
+        height: 60px;
+        background-color: $dark;
+        font-weight: bold;
+        color: $light;
+        font-size: 2.8rem;
+        text-align: center;
+        line-height: 60px;
+      }
+
+      .skill_react {
+        grid-row: 1/2;
+        grid-column: 1/3;
+      }
+      .skill_redux {
+        grid-row: 2/3;
+        grid-column: 2/4;
+      }
+      .skill_git {
+        grid-row: 3/4;
+        grid-column: 3/5;
+      }
+      .skill_node {
+        grid-row: 4/5;
+        grid-column: 4/6;
+      }
+      .skill_express {
+        grid-row: 5/6;
+        grid-column: 5/7;
+      }
+
+      .skill_mongo {
+        grid-row: 2/3;
+        grid-column: 2/4;
+      }
+      .skill_mysql {
+        grid-row: 3/4;
+        grid-column: 3/5;
+      }
+      .skill_css {
+        grid-row: 4/5;
+        grid-column: 4/6;
+      }
+      .skill_socket {
+        grid-row: 1/2;
+        grid-column: 1/3;
+      }
+      .skill_js {
+        grid-row: 5/6;
+        grid-column: 5/7;
+      }
+    }
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translatex(-2%);
+  }
+  50% {
+    transform: translatex(5%);
+  }
+  100% {
+    transform: translatex(0%);
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0%;
+  }
+  50% {
+    opacity: 50%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
