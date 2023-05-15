@@ -4,6 +4,7 @@ import Mail from "../../svg/Mail";
 import Telegram from "../../svg/Telegram";
 import Instagram from "../../svg/Instagram";
 import GitHub from "../../svg/GitHub";
+import pdf from "../../../public/img/Yevhen Yevstratov Junior Front-end Developer.pdf";
 const Contact = () => {
   return (
     <div className={styles.container}>
@@ -27,7 +28,10 @@ const Contact = () => {
             <GitHub />
           </div>
         </div>
-        <button className={`${styles.cv_btn} ${styles.btn}`}>
+        <button
+          className={`${styles.cv_btn} ${styles.btn}`}
+          onClick={() => window.open(pdf)}
+        >
           Download CV
         </button>
       </div>

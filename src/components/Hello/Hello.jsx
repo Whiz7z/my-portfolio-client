@@ -5,6 +5,7 @@ import Telegram from "../../svg/Telegram";
 import Instagram from "../../svg/Instagram";
 import GitHub from "../../svg/GitHub";
 import myPhoto from "../../../public/img/me.jpg";
+import pdf from "../../../public/img/Yevhen Yevstratov Junior Front-end Developer.pdf";
 const Hello = () => {
   return (
     <div className={styles.container}>
@@ -33,9 +34,12 @@ const Hello = () => {
             <button className={`${styles.contact_btn} ${styles.btn}`}>
               Contact me
             </button>
-            <button className={`${styles.cv_btn} ${styles.btn}`}>
+            <div
+              className={`${styles.cv_btn} ${styles.btn}`}
+              onClick={() => window.open(pdf)}
+            >
               Download CV
-            </button>
+            </div>
           </div>
         </div>
         <div className={styles.myPhoto_section}>
