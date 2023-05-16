@@ -95,11 +95,11 @@ a {
 
 @media screen and (-webkit-max-device-pixel-ratio: 0.3) {
   * {
-    font-size: 7rem;
+    font-size: 245%;
   }
 }
 @media screen and (-webkit-max-device-pixel-ratio: 0.4) {
   * {
-    font-size: 9rem;
+    font-size: 245%;
   }
 } */

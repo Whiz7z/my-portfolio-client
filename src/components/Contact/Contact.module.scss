@@ -41,71 +41,102 @@
       justify-self: center;
       align-self: center;
       position: relative;
-      top: -100px;
+
+      align-self: center;
     }
 
-    .socials {
+    .text {
       display: grid;
-      width: 870px;
+      width: 1000px;
       justify-self: center;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-
-      .social_item {
-        justify-self: center;
-        svg {
-          cursor: pointer;
-          transition: 300ms;
-          width: 90px;
-          fill: $dark;
-        }
+      align-self: center;
+      row-gap: 40px;
+      p {
+        font-size: 2.4rem;
+        color: $dark;
+        font-weight: bold;
+        text-align: justify;
       }
+
+      // .social_item {
+      //   justify-self: center;
+      //   svg {
+      //     cursor: pointer;
+      //     transition: 300ms;
+      //     width: 90px;
+      //     fill: $dark;
+      //   }
+      // }
+
+      // .mail {
+      //   svg {
+      //     &:hover {
+      //       fill: #ea4335;
+      //       transition: 300ms;
+      //     }
+      //   }
+      // }
+      // .telegram {
+      //   svg {
+      //     &:hover {
+      //       transition: 300ms;
+      //       fill: #26a5e4;
+      //     }
+      //   }
+      // }
+
+      // .linkedIn {
+      //   svg {
+      //     &:hover {
+      //       transition: 300ms;
+      //       fill: #0a66c2;
+      //     }
+      //   }
+      // }
+
+      // .insta {
+      //   svg {
+      //     &:hover {
+      //       transition: 300ms;
+      //       fill: #e4405f;
+      //     }
+      //   }
+      // }
+
+      // .git {
+      //   svg {
+      //     &:hover {
+      //       transition: 300ms;
+      //       fill: #181717;
+      //     }
+      //   }
+      // }
+    }
+
+    .mail_block {
+      justify-self: center;
 
       .mail {
-        svg {
-          &:hover {
-            fill: #ea4335;
-            transition: 300ms;
-          }
-        }
-      }
-      .telegram {
-        svg {
-          &:hover {
-            transition: 300ms;
-            fill: #26a5e4;
-          }
-        }
-      }
+        padding: 0px 5px 2px 5px;
+        font-size: 2.6rem;
+        font-weight: bold;
+        justify-self: center;
+        color: $dark;
+        cursor: pointer;
+        display: inline-block;
+        box-sizing: content-box;
+        line-height: auto;
+        text-decoration: underline;
 
-      .linkedIn {
-        svg {
-          &:hover {
-            transition: 300ms;
-            fill: #0a66c2;
-          }
-        }
-      }
-
-      .insta {
-        svg {
-          &:hover {
-            transition: 300ms;
-            fill: #e4405f;
-          }
-        }
-      }
-
-      .git {
-        svg {
-          &:hover {
-            transition: 300ms;
-            fill: #181717;
-          }
+        &:hover {
+          background-color: $dark;
+          color: $light;
         }
       }
     }
 
     .cv_btn {
+      align-self: center;
       color: $dark;
       background-color: $light;
       border: 5px solid $dark;

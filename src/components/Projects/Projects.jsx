@@ -51,7 +51,7 @@ const Projects = () => {
             <h2>Rock Paper Scissors Online</h2>
             <p className={styles.desc}>
               Online rock-paper-scissors game, where you can create rooms and
-              play with you friends
+              play with your friends
             </p>
             <p className={styles.tech}>
               react redux zustand mongo express socket.io sass

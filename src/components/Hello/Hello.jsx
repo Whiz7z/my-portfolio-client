@@ -1,12 +1,17 @@
 import styles from "./Hello.module.scss";
+import { useComponent } from "../../zustand/store";
 import LinkedIn from "../../svg/LinkedIn";
-import Mail from "../../svg/Mail";
 import Telegram from "../../svg/Telegram";
 import Instagram from "../../svg/Instagram";
 import GitHub from "../../svg/GitHub";
 import myPhoto from "../../../public/img/me.jpg";
 import pdf from "../../../public/img/Yevhen Yevstratov Junior Front-end Developer.pdf";
+
 const Hello = () => {
+  const { setComponent } = useComponent((state) => state);
+  const goToAboutMeHandler = () => {
+    setComponent("Contact");
+  };
   return (
     <div className={styles.container}>
       <p className={`${styles.tag} ${styles.first_tag}`}>{"<hello>"}</p>
@@ -31,8 +36,11 @@ const Hello = () => {
             experience working on real projects.
           </p>
           <div className={styles.btns}>
-            <button className={`${styles.contact_btn} ${styles.btn}`}>
-              Contact me
+            <button
+              className={`${styles.contact_btn} ${styles.btn}`}
+              onClick={() => goToAboutMeHandler()}
+            >
+              About me
             </button>
             <div
               className={`${styles.cv_btn} ${styles.btn}`}
@@ -48,9 +56,6 @@ const Hello = () => {
           </div>
 
           <div className={styles.socials}>
-            <div className={`${styles.social_item} ${styles.mail}`}>
-              <Mail />
-            </div>
             <div className={`${styles.social_item} ${styles.telegram}`}>
               <Telegram />
             </div>
@@ -63,6 +68,11 @@ const Hello = () => {
             <div className={`${styles.social_item} ${styles.git}`}>
               <GitHub />
             </div>
+          </div>
+          <div className={styles.mail_block}>
+            <a className={styles.mail} href="mailto:gjevstratov@gmail.com">
+              gjevstratov@gmail.com
+            </a>
           </div>
         </div>
       </div>

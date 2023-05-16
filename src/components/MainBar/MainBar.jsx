@@ -31,24 +31,34 @@ const MainBar = () => {
   //     setScrollCount((prev) => prev - 1);
   //   }
   // };
-
+  let componentToDisplay = <Hello />;
   useEffect(() => {
     console.log(scrollCount);
     if (scrollCount < 3 && scrollCount > 0) {
-      setComponent(<Hello />);
+      setComponent("Hello");
     } else if (3 < scrollCount && scrollCount < 6) {
-      setComponent(<Projects />);
+      setComponent("Projects");
     } else if (6 < scrollCount && scrollCount < 9) {
-      setComponent(<Skills />);
+      setComponent("Skills");
     } else if (9 < scrollCount && scrollCount < 12) {
-      setComponent(<Contact />);
+      setComponent("Contact");
     } else if (scrollCount > 12) {
       setScrollCount(12);
     } else if (scrollCount <= 0) {
       setScrollCount(0);
     }
-  }, [scrollCount]);
-  return <div className={styles.container}>{component}</div>;
+  }, [scrollCount, setComponent]);
+  if (component === "Hello") {
+    componentToDisplay = <Hello />;
+  } else if (component === "Projects") {
+    componentToDisplay = <Projects />;
+  } else if (component === "Skills") {
+    componentToDisplay = <Skills />;
+  } else if (component === "Contact") {
+    componentToDisplay = <Contact />;
+  }
+
+  return <div className={styles.container}>{componentToDisplay}</div>;
 };
 
 export default MainBar;
