@@ -4,8 +4,8 @@ import LinkedIn from "../../svg/LinkedIn";
 import Telegram from "../../svg/Telegram";
 import Instagram from "../../svg/Instagram";
 import GitHub from "../../svg/GitHub";
-import myPhoto from "../../../public/img/me.jpg";
-import pdf from "../../../public/img/Yevhen Yevstratov Junior Front-end Developer.pdf";
+import myPhoto from "../../img/me.jpg";
+import pdf from "../../img/Yevhen Yevstratov Junior Front-end Developer.pdf";
 
 const Hello = () => {
   const { setComponent } = useComponent((state) => state);
@@ -19,8 +19,8 @@ const Hello = () => {
         <div className={styles.info}>
           <h1>
             My name is Yevhen
-            <br />
-            {`I'm`} self-taught web developer <br />
+            <br className={styles.firstBr} />
+            {`I'm`} self-taught web developer <br className={styles.secondBr} />
             from Ukraine
           </h1>
           <p>
@@ -56,18 +56,39 @@ const Hello = () => {
           </div>
 
           <div className={styles.socials}>
-            <div className={`${styles.social_item} ${styles.telegram}`}>
+            <a
+              href="https://t.me/YevMyDev"
+              target="_blank"
+              rel="noreferrer"
+              className={`${styles.social_item} ${styles.telegram}`}
+            >
               <Telegram />
-            </div>
-            <div className={`${styles.social_item} ${styles.linkedIn}`}>
+            </a>
+            <a
+              href="https://linkedin.com/in/
+yevhen-yevstratov-a2271023b"
+              target="_blank"
+              rel="noreferrer"
+              className={`${styles.social_item} ${styles.linkedIn}`}
+            >
               <LinkedIn />
-            </div>
-            <div className={`${styles.social_item} ${styles.insta}`}>
+            </a>
+            <a
+              href="https://instagram.com/yevyevstratov?igshid=NTc4MTIwNjQ2YQ=="
+              target="_blank"
+              rel="noreferrer"
+              className={`${styles.social_item} ${styles.insta}`}
+            >
               <Instagram />
-            </div>
-            <div className={`${styles.social_item} ${styles.git}`}>
+            </a>
+            <a
+              href="https://github.com/Whiz7z"
+              target="_blank"
+              rel="noreferrer"
+              className={`${styles.social_item} ${styles.git}`}
+            >
               <GitHub />
-            </div>
+            </a>
           </div>
           <div className={styles.mail_block}>
             <a className={styles.mail} href="mailto:gjevstratov@gmail.com">

@@ -1,9 +1,9 @@
 import styles from "../BooksMarket/BooksMarket.module.scss";
 import GitHub from "../../svg/GitHub";
 
-import main from "../../../public/img/projects/main.png";
-import slider from "../../../public/img/projects/slider.png";
-import choose from "../../../public/img/projects/choose.png";
+import main from "../../img/projects/main.png";
+import slider from "../../img/projects/slider.png";
+import choose from "../../img/projects/choose.png";
 const TravelAgency = ({ onCloseModal }) => {
   return (
     <div className={styles.container}>

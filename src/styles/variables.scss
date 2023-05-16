@@ -23,6 +23,27 @@ $lightText: #c7ccdb;
   }
 }
 
+@mixin skill-reverse {
+  animation: shake 1s infinite;
+  position: relative;
+  cursor: pointer;
+  span {
+    display: none;
+    color: $dark;
+    position: absolute;
+  }
+
+  &:hover {
+    span {
+      transition: 300ms;
+      position: absolute;
+      display: inline-block;
+      animation: skillPop-reverse 0.3s;
+      transform: translatex(-360px);
+    }
+  }
+}
+
 @keyframes skillPop {
   0% {
     transform: translatex(0px);
@@ -30,6 +51,15 @@ $lightText: #c7ccdb;
 
   100% {
     transform: translatex(100px);
+  }
+}
+@keyframes skillPop-reverse {
+  0% {
+    transform: translatex(-300px);
+  }
+
+  100% {
+    transform: translatex(-360px);
   }
 }
 

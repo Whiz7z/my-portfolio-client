@@ -1,10 +1,6 @@
 import styles from "./Contact.module.scss";
-import LinkedIn from "../../svg/LinkedIn";
-import Mail from "../../svg/Mail";
-import Telegram from "../../svg/Telegram";
-import Instagram from "../../svg/Instagram";
-import GitHub from "../../svg/GitHub";
-import pdf from "../../../public/img/Yevhen Yevstratov Junior Front-end Developer.pdf";
+
+import pdf from "../../img/Yevhen Yevstratov Junior Front-end Developer.pdf";
 const Contact = () => {
   return (
     <div className={styles.container}>
@@ -13,8 +9,8 @@ const Contact = () => {
         <h1>More about me</h1>
         <div className={styles.text}>
           <p>
-            My passion for programming began at a young age, and by the time I
-            was 17.
+            My passion for programming began at a young age, when I was 17 years
+            old.
             <br /> I {"wasn't"} sure that it was the career I wanted to pursue.
             However, after graduating Law University in Ukraine, I realized that
             my true calling was in the world of programming. So, I decided to

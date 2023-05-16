@@ -194,6 +194,110 @@
       }
     }
   }
+
+  @media (max-width: 1500px) {
+    .content {
+      grid-template-columns: 1fr;
+      row-gap: 40px;
+      .myPhoto_section {
+        justify-self: center;
+
+        .myPhoto {
+          max-width: 50%;
+        }
+
+        .mail_block {
+          margin-bottom: 40px;
+        }
+      }
+
+      .info {
+        justify-self: center;
+        height: none;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 20px;
+        margin-top: 40px;
+        h1 {
+          grid-column: 1/3;
+          font-size: 3.5rem;
+
+          .secondBr {
+            display: none;
+          }
+        }
+
+        p {
+          grid-column: 3/4;
+          grid-row: 1/2;
+          font-size: 2.2rem;
+        }
+
+        .btns {
+          grid-column: 3/4;
+          grid-row: 2/3;
+        }
+
+        .btns {
+          .btn {
+            font-size: 2.8rem;
+            width: 240px;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            box-sizing: content-box;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1380px) {
+    .content {
+      padding-left: 0;
+      .myPhoto_section {
+        .myPhoto {
+        }
+
+        .mail_block {
+        }
+      }
+
+      .info {
+        row-gap: 15px;
+        h1 {
+          grid-column: 1/4;
+          grid-row: 1/2;
+          font-size: 3.2rem;
+          text-align: center;
+          width: 460px;
+          justify-self: center;
+          .secondBr {
+          }
+        }
+
+        p {
+          grid-column: 1/4;
+          grid-row: 2/3;
+          justify-self: center;
+          font-size: 2rem;
+        }
+
+        .btns {
+          grid-column: 1/4;
+          grid-row: 3/4;
+          justify-self: center;
+        }
+
+        .btns {
+          .btn {
+            width: 200px;
+            font-size: 2.4rem;
+            justify-self: center;
+          }
+        }
+      }
+    }
+  }
 }
 
 @keyframes slide {

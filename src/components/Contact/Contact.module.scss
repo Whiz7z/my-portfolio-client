@@ -57,60 +57,6 @@
         font-weight: bold;
         text-align: justify;
       }
-
-      // .social_item {
-      //   justify-self: center;
-      //   svg {
-      //     cursor: pointer;
-      //     transition: 300ms;
-      //     width: 90px;
-      //     fill: $dark;
-      //   }
-      // }
-
-      // .mail {
-      //   svg {
-      //     &:hover {
-      //       fill: #ea4335;
-      //       transition: 300ms;
-      //     }
-      //   }
-      // }
-      // .telegram {
-      //   svg {
-      //     &:hover {
-      //       transition: 300ms;
-      //       fill: #26a5e4;
-      //     }
-      //   }
-      // }
-
-      // .linkedIn {
-      //   svg {
-      //     &:hover {
-      //       transition: 300ms;
-      //       fill: #0a66c2;
-      //     }
-      //   }
-      // }
-
-      // .insta {
-      //   svg {
-      //     &:hover {
-      //       transition: 300ms;
-      //       fill: #e4405f;
-      //     }
-      //   }
-      // }
-
-      // .git {
-      //   svg {
-      //     &:hover {
-      //       transition: 300ms;
-      //       fill: #181717;
-      //     }
-      //   }
-      // }
     }
 
     .mail_block {
@@ -159,6 +105,36 @@
         -webkit-box-shadow: -5px 0px 20px 0px rgba(8, 76, 97, 1);
         -moz-box-shadow: -5px 0px 20px 0px rgba(8, 76, 97, 1);
         box-shadow: -5px 0px 20px 0px rgba(8, 76, 97, 1);
+      }
+    }
+  }
+
+  @media (max-width: 1380px) {
+    .content {
+      h1 {
+        margin-top: 30px;
+        font-size: 4.2rem;
+        margin-bottom: 20px;
+      }
+
+      .text {
+        p {
+          font-size: 2rem;
+        }
+      }
+      margin: 30px 0;
+      .text {
+        width: auto;
+        padding: 0 30px;
+      }
+
+      .mail_block {
+        margin-bottom: 30px;
+      }
+
+      .cv_btn {
+        margin-top: 60px;
+        margin-bottom: 30px;
       }
     }
   }

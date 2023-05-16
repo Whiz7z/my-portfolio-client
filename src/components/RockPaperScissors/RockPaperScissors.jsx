@@ -1,8 +1,8 @@
 import styles from "../BooksMarket/BooksMarket.module.scss";
 import GitHub from "../../svg/GitHub";
-import roomspage from "../../../public/img/projects/roompage.png";
-import game from "../../../public/img/projects/game.png";
-import result from "../../../public/img/projects/result.png";
+import roomspage from "../../img/projects/roompage.png";
+import game from "../../img/projects/game.png";
+import result from "../../img/projects/result.png";
 const RockPaperScissors = ({ onCloseModal }) => {
   return (
     <div className={styles.container}>

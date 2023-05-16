@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 import styles from "./MainBar.module.scss";
 import Hello from "../Hello/Hello";
@@ -11,17 +11,25 @@ import { useComponent } from "../../zustand/store";
 const MainBar = () => {
   const [element, setElement] = useState(<Hello />);
   const [scrollCount, setScrollCount] = useState(0);
-  const { setComponent, component } = useComponent((state) => state);
+  const { setComponent, component, counter, setCounter } = useComponent(
+    (state) => state
+  );
 
-  function scrollDownHandler() {
-    setScrollCount(scrollCount + 1);
-  }
+  useEffect(() => {
+    const scrollDownHandler = () => {
+      if (scrollCount < 12) {
+        setScrollCount(scrollCount + 1);
+      }
+    };
 
-  function scrollUpHandler() {
-    setScrollCount(scrollCount - 1);
-  }
+    const scrollUpHandler = () => {
+      if (scrollCount > 0) {
+        setScrollCount(scrollCount - 1);
+      }
+    };
 
-  onceWheel(scrollDownHandler, scrollUpHandler);
+    onceWheel(scrollDownHandler, scrollUpHandler);
+  }, [scrollCount]);
 
   // const handleScroll = (event) => {
   //   //console.log(event);
@@ -31,9 +39,10 @@ const MainBar = () => {
   //     setScrollCount((prev) => prev - 1);
   //   }
   // };
-  let componentToDisplay = <Hello />;
+
+  const [componentToDisplay, setComponentToDisplay] = useState(<Hello />);
   useEffect(() => {
-    console.log(scrollCount);
+    //console.log(scrollCount);
     if (scrollCount < 3 && scrollCount > 0) {
       setComponent("Hello");
     } else if (3 < scrollCount && scrollCount < 6) {
@@ -42,21 +51,28 @@ const MainBar = () => {
       setComponent("Skills");
     } else if (9 < scrollCount && scrollCount < 12) {
       setComponent("Contact");
-    } else if (scrollCount > 12) {
+    } else if (scrollCount >= 12) {
       setScrollCount(12);
     } else if (scrollCount <= 0) {
       setScrollCount(0);
     }
   }, [scrollCount, setComponent]);
-  if (component === "Hello") {
-    componentToDisplay = <Hello />;
-  } else if (component === "Projects") {
-    componentToDisplay = <Projects />;
-  } else if (component === "Skills") {
-    componentToDisplay = <Skills />;
-  } else if (component === "Contact") {
-    componentToDisplay = <Contact />;
-  }
+
+  useEffect(() => {
+    if (component === "Hello") {
+      setScrollCount(0);
+      setComponentToDisplay(<Hello />);
+    } else if (component === "Projects") {
+      setScrollCount(4);
+      setComponentToDisplay(<Projects />);
+    } else if (component === "Skills") {
+      setScrollCount(7);
+      setComponentToDisplay(<Skills />);
+    } else if (component === "Contact") {
+      setScrollCount(10);
+      setComponentToDisplay(<Contact />);
+    }
+  }, [component]);
 
   return <div className={styles.container}>{componentToDisplay}</div>;
 };

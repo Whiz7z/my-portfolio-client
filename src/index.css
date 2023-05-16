@@ -34,6 +34,10 @@ html {
   font-family: "Inika", serif;
 }
 
+/* * {
+  outline: 1px solid red;
+} */
+
 /* Выставляем основные настройки по-умолчанию для body */
 body {
   min-height: 100vh;
@@ -75,6 +79,12 @@ select {
 a {
   color: auto;
   text-decoration: none;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
 }
 
 /* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */

@@ -1,8 +1,9 @@
 import { useState } from "react";
 import styles from "./Projects.module.scss";
-import bookImg from "../../../public/img/projects/books-market.png";
-import rpsImg from "../../../public/img/projects/rock-paper-scissors.png";
-import travelImg from "../../../public/img/projects/travel.png";
+import bookImg from "../../img/projects/books-market.png";
+import rpsImg from "../../img/projects/rock-paper-scissors.png";
+import travelImg from "../../img/projects/travel.png";
+
 import BooksMarket from "../BooksMarket/BooksMarket";
 import RockPaperScissors from "../RockPaperScissors/RockPaperScissors";
 import TravelAgency from "./../TravelAgency/TravelAgency";

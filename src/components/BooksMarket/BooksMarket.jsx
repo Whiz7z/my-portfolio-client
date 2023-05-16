@@ -1,8 +1,8 @@
 import styles from "./BooksMarket.module.scss";
 import GitHub from "../../svg/GitHub";
-import product from "../../../public/img/projects/product.png";
-import cart from "../../../public/img/projects/cart.png";
-import edit from "../../../public/img/projects/edit.png";
+import product from "../../img/projects/product.png";
+import cart from "../../img/projects/cart.png";
+import edit from "../../img/projects/edit.png";
 
 const BooksMarket = ({ onCloseModal }) => {
   return (
