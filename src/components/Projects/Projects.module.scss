@@ -118,6 +118,78 @@
       margin-bottom: 20px;
     }
   }
+
+  @media (max-width: 1020px) {
+    .tag {
+      font-size: 3.2rem;
+    }
+  }
+  @media (max-width: 600px) {
+    .tag {
+      font-size: 3.2rem;
+    }
+    .content {
+      padding: 15px 15px;
+      .project {
+        width: 100%;
+        box-sizing: content-box;
+        border: 3px solid $lightText;
+        .img_block {
+          width: 100%;
+        }
+
+        .info {
+          width: 100%;
+
+          h2 {
+            width: 90%;
+            font-size: 2.4rem;
+          }
+
+          .desc {
+            width: 95%;
+          }
+
+          .tech {
+            width: 95%;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 400px) {
+    .content {
+      padding: 15px 15px;
+      .project {
+        width: 100%;
+
+        box-sizing: content-box;
+        .img_block {
+          width: 100%;
+        }
+
+        .info {
+          width: 100%;
+
+          h2 {
+            width: 90%;
+            font-size: 2.2rem;
+          }
+
+          .desc {
+            width: 95%;
+            font-size: 1.4rem;
+          }
+
+          .tech {
+            width: 95%;
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+  }
 }
 
 @keyframes slide {

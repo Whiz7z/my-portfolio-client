@@ -72,6 +72,7 @@
           color: $light;
           background-color: $dark;
           border: 5px solid transparent;
+          box-sizing: content-box;
           &:hover {
             transition: 300ms;
             background-color: transparent;
@@ -89,6 +90,7 @@
           color: $dark;
           background-color: transparent;
           border: 5px solid $dark;
+          box-sizing: content-box;
           &:hover {
             transition: 300ms;
             background-color: $dark;
@@ -113,6 +115,9 @@
         justify-self: center;
         width: 560px;
         height: 560px;
+        background-image: url(".././../img//me.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
         shape-outside: circle();
         clip-path: circle();
         overflow: hidden;
@@ -203,7 +208,6 @@
         justify-self: center;
 
         .myPhoto {
-          max-width: 50%;
         }
 
         .mail_block {
@@ -235,9 +239,6 @@
         .btns {
           grid-column: 3/4;
           grid-row: 2/3;
-        }
-
-        .btns {
           .btn {
             font-size: 2.8rem;
             width: 240px;
@@ -286,13 +287,103 @@
           grid-column: 1/4;
           grid-row: 3/4;
           justify-self: center;
-        }
-
-        .btns {
           .btn {
             width: 200px;
             font-size: 2.4rem;
             justify-self: center;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 660px) {
+    .tag {
+      font-size: 3.2rem;
+    }
+    .content {
+      padding-left: 0;
+      .myPhoto_section {
+        width: 100%;
+        .myPhoto {
+          width: 400px;
+          background-position-y: 40px;
+        }
+
+        .mail_block {
+        }
+      }
+
+      .info {
+        // * {
+        //   outline: 1px solid red;
+        // }
+        row-gap: 15px;
+        width: 100%;
+        outline: 1px solid red;
+        h1 {
+          grid-column: 1/4;
+          grid-row: 1/2;
+          font-size: 2.6rem;
+          text-align: center;
+          width: 90%;
+          justify-self: center;
+          .secondBr {
+          }
+        }
+
+        p {
+          font-size: 2rem;
+        }
+
+        .btns {
+          width: 100%;
+          grid-column: 1/4;
+          grid-row: 3/4;
+          justify-self: center;
+          grid-template-columns: 1fr;
+          row-gap: 20px;
+          .btn {
+            width: 180px;
+            font-size: 2rem;
+            justify-self: center;
+            box-sizing: border-box;
+            text-align: center;
+            line-height: 55px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .content {
+      .myPhoto_section {
+        .myPhoto {
+          width: 300px;
+          background-position-y: 80px;
+        }
+
+        .mail_block {
+        }
+
+        .socials {
+          width: 100%;
+        }
+      }
+
+      .info {
+        outline: 1px solid red;
+        h1 {
+          .secondBr {
+          }
+        }
+
+        p {
+        }
+
+        .btns {
+          .btn {
           }
         }
       }

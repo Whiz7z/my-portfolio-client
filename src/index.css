@@ -97,6 +97,25 @@ a {
   }
 }
 
+::-webkit-scrollbar {
+  width: 11px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #084c61;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ae7e45;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #96662b;
+}
+
 /* @media screen and (-webkit-max-device-pixel-ratio: 1) {
   * {
     font-size: 62.5%;

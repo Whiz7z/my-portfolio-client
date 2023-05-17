@@ -8,39 +8,49 @@ import Contact from "../Contact/Contact";
 import onceWheel from "once-wheel";
 import { useComponent } from "../../zustand/store";
 
+function getCurrentDimension() {
+  return {
+    width: window.innerWidth,
+    height: window.innerHeight,
+  };
+}
+
 const MainBar = () => {
-  const [element, setElement] = useState(<Hello />);
+  //const [element, setElement] = useState(<Hello />);
   const [scrollCount, setScrollCount] = useState(0);
-  const { setComponent, component, counter, setCounter } = useComponent(
-    (state) => state
-  );
+  const [componentToDisplay, setComponentToDisplay] = useState(<Hello />);
+
+  const { setComponent, component } = useComponent((state) => state);
+  const [screenSize, setScreenSize] = useState(getCurrentDimension());
+  useEffect(() => {
+    const updateDimension = () => {
+      setScreenSize(getCurrentDimension());
+    };
+    window.addEventListener("resize", updateDimension);
+
+    return () => {
+      window.removeEventListener("resize", updateDimension);
+    };
+  }, [screenSize]);
 
   useEffect(() => {
-    const scrollDownHandler = () => {
-      if (scrollCount < 12) {
-        setScrollCount(scrollCount + 1);
-      }
-    };
+    if (screenSize.width > 1835 && screenSize.height >= 1260) {
+      const scrollDownHandler = () => {
+        if (scrollCount < 12) {
+          setScrollCount(scrollCount + 1);
+        }
+      };
 
-    const scrollUpHandler = () => {
-      if (scrollCount > 0) {
-        setScrollCount(scrollCount - 1);
-      }
-    };
+      const scrollUpHandler = () => {
+        if (scrollCount > 0) {
+          setScrollCount(scrollCount - 1);
+        }
+      };
 
-    onceWheel(scrollDownHandler, scrollUpHandler);
-  }, [scrollCount]);
+      onceWheel(scrollDownHandler, scrollUpHandler);
+    }
+  }, [scrollCount, screenSize]);
 
-  // const handleScroll = (event) => {
-  //   //console.log(event);
-  //   if (!event.ctrlKey && event.deltaY > 0) {
-  //     setScrollCount((prev) => prev + 1);
-  //   } else if (!event.ctrlKey && event.deltaY < 0) {
-  //     setScrollCount((prev) => prev - 1);
-  //   }
-  // };
-
-  const [componentToDisplay, setComponentToDisplay] = useState(<Hello />);
   useEffect(() => {
     //console.log(scrollCount);
     if (scrollCount < 3 && scrollCount > 0) {

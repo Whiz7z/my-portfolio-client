@@ -3,43 +3,50 @@ $light: #ae7e45;
 $lightText: #c7ccdb;
 
 @mixin skill {
-  animation: shake 1s infinite;
-  position: relative;
-  cursor: pointer;
-  span {
-    display: none;
-    color: $dark;
-    position: absolute;
-  }
-
-  &:hover {
+  @media (min-width: 750px) {
+    animation: shake 1s infinite;
+    position: relative;
+    cursor: pointer;
     span {
-      transition: 300ms;
+      display: none;
+      color: $dark;
       position: absolute;
-      display: inline-block;
-      animation: skillPop 0.3s;
-      transform: translatex(100px);
+    }
+
+    &:hover {
+      span {
+        transition: 300ms;
+        position: absolute;
+        display: inline-block;
+        animation: skillPop 0.3s;
+        transform: translatex(100px);
+      }
     }
   }
 }
 
-@mixin skill-reverse {
-  animation: shake 1s infinite;
-  position: relative;
-  cursor: pointer;
-  span {
-    display: none;
-    color: $dark;
-    position: absolute;
-  }
+@mixin skill-down {
+}
 
-  &:hover {
+@mixin skill-reverse {
+  @media (min-width: 750px) {
+    animation: shake 1s infinite;
+    position: relative;
+    cursor: pointer;
     span {
-      transition: 300ms;
+      display: none;
+      color: $dark;
       position: absolute;
-      display: inline-block;
-      animation: skillPop-reverse 0.3s;
-      transform: translatex(-360px);
+    }
+
+    &:hover {
+      span {
+        transition: 300ms;
+        position: absolute;
+        display: inline-block;
+        animation: skillPop-reverse 0.3s;
+        transform: translatex(-360px);
+      }
     }
   }
 }
@@ -51,6 +58,17 @@ $lightText: #c7ccdb;
 
   100% {
     transform: translatex(100px);
+  }
+}
+
+@keyframes skillPop-down {
+  0% {
+    top: 0px;
+    left: 0px;
+  }
+
+  100% {
+    top: 100px;
   }
 }
 @keyframes skillPop-reverse {

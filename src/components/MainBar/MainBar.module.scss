@@ -12,4 +12,8 @@
   p {
     font-size: 8rem;
   }
+
+  @media (max-width: 955px) {
+    grid-column: 1/2;
+  }
 }
