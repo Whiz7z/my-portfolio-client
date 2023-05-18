@@ -2,12 +2,12 @@
 
 .container {
   background-color: $light;
-  height: 100%;
+
   width: 100%;
   grid-column: 2/3;
   display: grid;
-  overflow: scroll;
-  overflow-x: hidden;
+  overflow-y: visible;
+  // overflow-x: hidden;
   p {
     font-size: 8rem;
   }

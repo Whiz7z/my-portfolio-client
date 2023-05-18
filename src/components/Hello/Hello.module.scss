@@ -2,7 +2,7 @@
 
 .container {
   width: 95%;
-  height: 95%;
+  height: 100%;
   align-self: center;
   justify-self: center;
   display: grid;
@@ -11,9 +11,10 @@
   transition: 400ms opacity ease-in-out;
 
   animation: opacity 1s;
-
+  padding: 40px 0;
   @media (max-width: 955px) {
     grid-template-rows: auto 1fr min-content auto;
+    padding: 60px 0;
   }
 
   .tag {
@@ -168,7 +169,6 @@
         background-size: cover;
         shape-outside: circle();
         clip-path: circle();
-        overflow: hidden;
       }
 
       .socials {

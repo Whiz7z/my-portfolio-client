@@ -32,7 +32,6 @@ dd {
 html {
   font-size: 62.5%;
   font-family: "Inika", serif;
-  height: -webkit-fill-available;
 }
 
 /* * {
@@ -42,8 +41,8 @@ html {
 /* Выставляем основные настройки по-умолчанию для body */
 body {
   /* min-height: 100svh; */
-  height: -webkit-fill-available;
   scroll-behavior: smooth;
+
   text-rendering: optimizeSpeed;
   line-height: 1.5;
 }
@@ -85,7 +84,6 @@ a {
 
 #root {
   width: 100vw;
-  height: 100vh;
   display: grid;
 }
 
