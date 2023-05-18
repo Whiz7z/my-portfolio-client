@@ -41,7 +41,7 @@ html {
 
 /* Выставляем основные настройки по-умолчанию для body */
 body {
-  min-height: 100vh;
+  min-height: 100dvh;
   height: -webkit-fill-available;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
