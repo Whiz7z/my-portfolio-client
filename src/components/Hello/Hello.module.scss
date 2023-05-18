@@ -8,6 +8,14 @@
   display: grid;
   grid-template-rows: auto 1fr auto;
 
+  transition: 400ms opacity ease-in-out;
+
+  animation: opacity 1s;
+
+  @media (max-width: 955px) {
+    grid-template-rows: auto 1fr min-content auto;
+  }
+
   .tag {
     font-weight: bold;
     font-size: 4.2rem;
@@ -25,11 +33,53 @@
     align-self: flex-end;
   }
 
+  @include navDownArrow;
+
+  // .nav {
+  //   display: grid;
+  //   justify-self: center;
+  //   cursor: pointer;
+
+  //   &:hover {
+  //     p {
+  //       opacity: 100%;
+  //     }
+
+  //     .arrow {
+  //       svg {
+  //         opacity: 100%;
+  //       }
+  //     }
+  //   }
+
+  //   p {
+  //     font-size: 2.4rem;
+  //     color: $dark;
+  //     text-align: center;
+  //     opacity: 80%;
+  //   }
+
+  //   .arrow {
+  //     width: 30px;
+  //     height: 30px;
+  //     display: grid;
+  //     justify-self: center;
+
+  //     svg {
+  //       width: 30px;
+  //       height: 30px;
+  //       opacity: 80%;
+  //       fill: $dark;
+  //       position: relative;
+  //       top: -8px;
+  //     }
+  //   }
+  // }
+
   .content {
     width: 100%;
     color: $dark;
     padding-left: 80px;
-    display: grid;
     display: grid;
     grid-template-columns: 1fr 1fr;
     transition: 400ms opacity ease-in-out;
@@ -72,7 +122,6 @@
           color: $light;
           background-color: $dark;
           border: 5px solid transparent;
-          box-sizing: content-box;
           &:hover {
             transition: 300ms;
             background-color: transparent;
@@ -90,7 +139,6 @@
           color: $dark;
           background-color: transparent;
           border: 5px solid $dark;
-          box-sizing: content-box;
           &:hover {
             transition: 300ms;
             background-color: $dark;

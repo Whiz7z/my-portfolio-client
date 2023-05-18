@@ -7,10 +7,13 @@ import travelImg from "../../img/projects/travel.png";
 import BooksMarket from "../BooksMarket/BooksMarket";
 import RockPaperScissors from "../RockPaperScissors/RockPaperScissors";
 import TravelAgency from "./../TravelAgency/TravelAgency";
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
+import { useComponent } from "../../zustand/store";
 const Projects = () => {
   const [booksMarket, setBooksMarket] = useState(false);
   const [rockPapeprScissors, setRockPapeprScissors] = useState(false);
   const [travelAgency, setTravelAgency] = useState(false);
+  const { setComponent } = useComponent((state) => state);
   const closeModalHandler = (project) => {
     if (project === "booksMarket") {
       setBooksMarket((prev) => !prev);
@@ -24,6 +27,12 @@ const Projects = () => {
   return (
     <div className={styles.container}>
       <p className={`${styles.tag} ${styles.first_tag}`}>{"<projects>"}</p>
+      <div className={styles.navUp} onClick={() => setComponent("Hello")}>
+        <div className={styles.arrow}>
+          <MdKeyboardArrowUp />
+        </div>
+        <p>Main</p>
+      </div>
       <div className={styles.content}>
         <div
           className={styles.project}
@@ -74,6 +83,12 @@ const Projects = () => {
             </p>
             <p className={styles.tech}>react sass/scss</p>
           </div>
+        </div>
+      </div>
+      <div className={styles.nav} onClick={() => setComponent("Skills")}>
+        <p>Skills</p>
+        <div className={styles.arrow}>
+          <MdKeyboardArrowDown />
         </div>
       </div>
       <p className={`${styles.tag} ${styles.last_tag}`}>{"</projects>"}</p>

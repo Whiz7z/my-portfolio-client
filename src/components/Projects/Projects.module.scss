@@ -7,6 +7,16 @@
   display: grid;
   grid-template-rows: auto 1fr auto;
 
+  transition: 400ms opacity ease-in-out;
+
+  animation: opacity 1s;
+
+  @media (max-width: 955px) {
+    grid-template-rows: auto min-content 1fr min-content auto;
+  }
+
+  @include navDownArrow;
+  @include navDownUp;
   .tag {
     font-weight: bold;
     font-size: 4.2rem;

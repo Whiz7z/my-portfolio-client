@@ -1,10 +1,21 @@
 import styles from "./Contact.module.scss";
 
 import pdf from "../../img/Yevhen Yevstratov Junior Front-end Developer.pdf";
+
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
+import { useComponent } from "../../zustand/store";
+
 const Contact = () => {
+  const { setComponent } = useComponent((state) => state);
   return (
     <div className={styles.container}>
       <p className={`${styles.tag} ${styles.first_tag}`}>{"<about me>"}</p>
+      <div className={styles.navUp} onClick={() => setComponent("Skills")}>
+        <div className={styles.arrow}>
+          <MdKeyboardArrowUp />
+        </div>
+        <p>Skills</p>
+      </div>
       <div className={styles.content}>
         <h1>More about me</h1>
         <div className={styles.text}>
@@ -24,22 +35,6 @@ const Contact = () => {
             me to learn something new, and {"I'm"} always excited to collaborate
             with others to bring their ideas to life
           </p>
-
-          {/* <div className={`${styles.social_item} ${styles.mail}`}>
-            <Mail />
-          </div>
-          <div className={`${styles.social_item} ${styles.telegram}`}>
-            <Telegram />
-          </div>
-          <div className={`${styles.social_item} ${styles.linkedIn}`}>
-            <LinkedIn />
-          </div>
-          <div className={`${styles.social_item} ${styles.insta}`}>
-            <Instagram />
-          </div>
-          <div className={`${styles.social_item} ${styles.git}`}>
-            <GitHub />
-          </div> */}
         </div>
 
         <button
@@ -54,7 +49,6 @@ const Contact = () => {
           </a>
         </div>
       </div>
-
       <p className={`${styles.tag} ${styles.last_tag}`}>{"</about me>"}</p>
     </div>
   );

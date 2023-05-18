@@ -22,51 +22,49 @@ const MainBar = () => {
 
   const { setComponent, component } = useComponent((state) => state);
   const [screenSize, setScreenSize] = useState(getCurrentDimension());
-  useEffect(() => {
-    const updateDimension = () => {
-      setScreenSize(getCurrentDimension());
-    };
-    window.addEventListener("resize", updateDimension);
+  // useEffect(() => {
+  //   const updateDimension = () => {
+  //     setScreenSize(getCurrentDimension());
+  //   };
+  //   window.addEventListener("resize", updateDimension);
 
-    return () => {
-      window.removeEventListener("resize", updateDimension);
-    };
-  }, [screenSize]);
+  //   return () => {
+  //     window.removeEventListener("resize", updateDimension);
+  //   };
+  // }, [screenSize]);
 
-  useEffect(() => {
-    if (screenSize.width > 1835 && screenSize.height >= 1260) {
-      const scrollDownHandler = () => {
-        if (scrollCount < 12) {
-          setScrollCount(scrollCount + 1);
-        }
-      };
+  // useEffect(() => {
+  //   // if (screenSize.width > 1835 && screenSize.height >= 1260) {
+  //   //   const scrollDownHandler = () => {
+  //   //     if (scrollCount < 12) {
+  //   //       setScrollCount(scrollCount + 1);
+  //   //     }
+  //   //   };
+  //   //   const scrollUpHandler = () => {
+  //   //     if (scrollCount > 0) {
+  //   //       setScrollCount(scrollCount - 1);
+  //   //     }
+  //   //   };
+  //   //   onceWheel(scrollDownHandler, scrollUpHandler);
+  //   // }
+  // }, [scrollCount, screenSize]);
 
-      const scrollUpHandler = () => {
-        if (scrollCount > 0) {
-          setScrollCount(scrollCount - 1);
-        }
-      };
-
-      onceWheel(scrollDownHandler, scrollUpHandler);
-    }
-  }, [scrollCount, screenSize]);
-
-  useEffect(() => {
-    //console.log(scrollCount);
-    if (scrollCount < 3 && scrollCount > 0) {
-      setComponent("Hello");
-    } else if (3 < scrollCount && scrollCount < 6) {
-      setComponent("Projects");
-    } else if (6 < scrollCount && scrollCount < 9) {
-      setComponent("Skills");
-    } else if (9 < scrollCount && scrollCount < 12) {
-      setComponent("Contact");
-    } else if (scrollCount >= 12) {
-      setScrollCount(12);
-    } else if (scrollCount <= 0) {
-      setScrollCount(0);
-    }
-  }, [scrollCount, setComponent]);
+  // useEffect(() => {
+  //   //console.log(scrollCount);
+  //   if (scrollCount < 3 && scrollCount > 0) {
+  //     setComponent("Hello");
+  //   } else if (3 < scrollCount && scrollCount < 6) {
+  //     setComponent("Projects");
+  //   } else if (6 < scrollCount && scrollCount < 9) {
+  //     setComponent("Skills");
+  //   } else if (9 < scrollCount && scrollCount < 12) {
+  //     setComponent("Contact");
+  //   } else if (scrollCount >= 12) {
+  //     setScrollCount(12);
+  //   } else if (scrollCount <= 0) {
+  //     setScrollCount(0);
+  //   }
+  // }, [scrollCount, setComponent]);
 
   useEffect(() => {
     if (component === "Hello") {

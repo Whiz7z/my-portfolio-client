@@ -6,6 +6,7 @@ import Instagram from "../../svg/Instagram";
 import GitHub from "../../svg/GitHub";
 import myPhoto from "../../img/me.jpg";
 import pdf from "../../img/Yevhen Yevstratov Junior Front-end Developer.pdf";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 const Hello = () => {
   const { setComponent } = useComponent((state) => state);
@@ -93,6 +94,12 @@ yevhen-yevstratov-a2271023b"
               gjevstratov@gmail.com
             </a>
           </div>
+        </div>
+      </div>
+      <div className={styles.nav} onClick={() => setComponent("Projects")}>
+        <p>Projects</p>
+        <div className={styles.arrow}>
+          <MdKeyboardArrowDown />
         </div>
       </div>
       <p className={`${styles.tag} ${styles.last_tag}`}>{"</hello>"}</p>

@@ -51,6 +51,107 @@ $lightText: #c7ccdb;
   }
 }
 
+@mixin navDownArrow {
+  .nav {
+    display: none;
+    visibility: hidden;
+    margin-top: 30px;
+    display: grid;
+    justify-self: center;
+    cursor: pointer;
+
+    &:hover {
+      p {
+        opacity: 100%;
+      }
+
+      .arrow {
+        svg {
+          opacity: 100%;
+        }
+      }
+    }
+
+    p {
+      font-size: 2.4rem;
+      color: $dark;
+      text-align: center;
+      opacity: 80%;
+    }
+
+    .arrow {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      justify-self: center;
+
+      svg {
+        width: 30px;
+        height: 30px;
+        opacity: 80%;
+        fill: $dark;
+        position: relative;
+        top: -8px;
+      }
+    }
+
+    @media (max-width: 955px) {
+      display: grid;
+      visibility: visible;
+    }
+  }
+}
+
+@mixin navDownUp {
+  .navUp {
+    display: none;
+    visibility: hidden;
+    margin-bottom: 30px;
+    justify-self: center;
+    cursor: pointer;
+
+    &:hover {
+      p {
+        opacity: 100%;
+      }
+
+      .arrow {
+        svg {
+          opacity: 100%;
+        }
+      }
+    }
+
+    p {
+      font-size: 2.4rem;
+      color: $dark;
+      text-align: center;
+      opacity: 80%;
+    }
+
+    .arrow {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      justify-self: center;
+
+      svg {
+        width: 30px;
+        height: 30px;
+        opacity: 80%;
+        fill: $dark;
+        position: relative;
+        top: 8px;
+      }
+    }
+
+    @media (max-width: 955px) {
+      display: grid;
+      visibility: visible;
+    }
+  }
+}
+
 @keyframes skillPop {
   0% {
     transform: translatex(0px);
