@@ -363,12 +363,8 @@
       }
 
       .info {
-        // * {
-        //   outline: 1px solid red;
-        // }
         row-gap: 15px;
         width: 100%;
-        outline: 1px solid red;
         h1 {
           grid-column: 1/4;
           grid-row: 1/2;
@@ -421,7 +417,6 @@
       }
 
       .info {
-        outline: 1px solid red;
         h1 {
           .secondBr {
           }
