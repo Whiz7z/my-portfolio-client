@@ -164,9 +164,10 @@
         justify-self: center;
         width: 560px;
         height: 560px;
-        background-image: url(".././../img//me.jpg");
+        background-image: url(".././../img//for portfolio.png");
         background-repeat: no-repeat;
         background-size: cover;
+        background-position-y: -80px;
         shape-outside: circle();
         clip-path: circle();
       }
@@ -405,7 +406,9 @@
       .myPhoto_section {
         .myPhoto {
           width: 300px;
-          background-position-y: 80px;
+          // background-position-y: 80px;
+          background-position-x: -50px;
+          background-size: 120%;
         }
 
         .mail_block {
