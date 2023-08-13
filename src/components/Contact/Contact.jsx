@@ -23,9 +23,9 @@ const Contact = () => {
             My passion for programming began at a young age, when I was 17 years
             old.
             <br /> I {"wasn't"} sure that it was the career I wanted to pursue.
-            However, after graduating Law University in Ukraine, I realized that
-            my true calling was in the world of programming. So, I decided to
-            make a change and pursue my hobby full-time.
+            However, while studying at Law University in Ukraine, I realized
+            that my true calling was in the world of programming. So, I decided
+            to make a change and pursue my hobby full-time.
           </p>
 
           <p className={styles.right}>
