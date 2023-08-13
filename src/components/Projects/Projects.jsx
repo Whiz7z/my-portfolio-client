@@ -3,16 +3,21 @@ import styles from "./Projects.module.scss";
 import bookImg from "../../img/projects/books-market.png";
 import rpsImg from "../../img/projects/rock-paper-scissors.png";
 import travelImg from "../../img/projects/travel.png";
+import moneyTrImg from "../../img/projects/myexpenses.png";
 
 import BooksMarket from "../BooksMarket/BooksMarket";
 import RockPaperScissors from "../RockPaperScissors/RockPaperScissors";
 import TravelAgency from "./../TravelAgency/TravelAgency";
+import MoneyTracker from "./../MoneyTracker/MoneyTracker";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import { useComponent } from "../../zustand/store";
 const Projects = () => {
   const [booksMarket, setBooksMarket] = useState(false);
   const [rockPapeprScissors, setRockPapeprScissors] = useState(false);
   const [travelAgency, setTravelAgency] = useState(false);
+  const [moneyTracker, setMoneyTracker] = useState(false);
+
+  const [page, setPage] = useState(2);
   const { setComponent } = useComponent((state) => state);
   const closeModalHandler = (project) => {
     if (project === "booksMarket") {
@@ -22,17 +27,15 @@ const Projects = () => {
       console.log("yes");
     } else if (project === "travelAgency") {
       setTravelAgency((prev) => !prev);
+    } else if (project === "moneyTracker") {
+      setMoneyTracker((prev) => !prev);
     }
   };
-  return (
-    <div className={styles.container}>
-      <p className={`${styles.tag} ${styles.first_tag}`}>{"<projects>"}</p>
-      <div className={styles.navUp} onClick={() => setComponent("Hello")}>
-        <div className={styles.arrow}>
-          <MdKeyboardArrowUp />
-        </div>
-        <p>Main</p>
-      </div>
+
+  let projects;
+
+  if (page === 1) {
+    projects = (
       <div className={styles.content}>
         <div
           className={styles.project}
@@ -70,7 +73,30 @@ const Projects = () => {
         </div>
 
         <div
-          className={styles.project}
+          className={`${styles.project}`}
+          onClick={() => closeModalHandler("moneyTracker")}
+        >
+          <div className={styles.img_block}>
+            <img alt="rock" src={moneyTrImg} />
+          </div>
+          <div className={styles.info}>
+            <h2>Money Tracker</h2>
+            <p className={styles.desc}>
+              Money tracker web app where you can record your expenses and
+              income
+            </p>
+            <p className={styles.tech}>
+              next.js mongo tailwind approuter next-auth
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  } else if (page === 2) {
+    projects = (
+      <div className={styles.content}>
+        <div
+          className={`${styles.project} ${styles.projectCentered}`}
           onClick={() => closeModalHandler("travelAgency")}
         >
           <div className={styles.img_block}>
@@ -84,6 +110,33 @@ const Projects = () => {
             <p className={styles.tech}>react sass/scss</p>
           </div>
         </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className={styles.container}>
+      <p className={`${styles.tag} ${styles.first_tag}`}>{"<projects>"}</p>
+      <div className={styles.navUp} onClick={() => setComponent("Hello")}>
+        <div className={styles.arrow}>
+          <MdKeyboardArrowUp />
+        </div>
+        <p>Main</p>
+      </div>
+      {projects}
+      <div className={styles.pagePicker}>
+        <div
+          className={`${styles.pageBtn} ${
+            page === 1 ? styles.pageActive : styles.pageNonActive
+          }`}
+          onClick={() => setPage(1)}
+        ></div>
+        <div
+          className={`${styles.pageBtn} ${
+            page === 2 ? styles.pageActive : styles.pageNonActive
+          }`}
+          onClick={() => setPage(2)}
+        ></div>
       </div>
       <div className={styles.nav} onClick={() => setComponent("Skills")}>
         <p>Skills</p>
@@ -102,6 +155,9 @@ const Projects = () => {
       )}
       {travelAgency && (
         <TravelAgency onCloseModal={() => closeModalHandler("travelAgency")} />
+      )}
+      {moneyTracker && (
+        <MoneyTracker onCloseModal={() => closeModalHandler("moneyTracker")} />
       )}
     </div>
   );
