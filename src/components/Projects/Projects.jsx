@@ -17,7 +17,7 @@ const Projects = () => {
   const [travelAgency, setTravelAgency] = useState(false);
   const [moneyTracker, setMoneyTracker] = useState(false);
 
-  const [page, setPage] = useState(2);
+  const [page, setPage] = useState(1);
   const { setComponent } = useComponent((state) => state);
   const closeModalHandler = (project) => {
     if (project === "booksMarket") {
