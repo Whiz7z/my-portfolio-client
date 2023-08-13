@@ -16,7 +16,7 @@ const Skills = () => {
       <div className={styles.content}>
         <div className={`${styles.collumn} ${styles.left}`}>
           <div className={`${styles.skill} ${styles.skill_react}`}>
-            React<span>Routing</span>
+            React<span>Next.js</span>
           </div>
           <div className={`${styles.skill} ${styles.skill_redux}`}>
             Redux<span>RTKQuery</span>
