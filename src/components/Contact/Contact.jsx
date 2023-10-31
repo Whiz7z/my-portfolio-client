@@ -1,6 +1,6 @@
 import styles from "./Contact.module.scss";
 
-import pdf from "../../img/Yevhen Yevstratov Junior Front-end Developer upd.pdf";
+import pdf from "../../img/Yevhen Yevstratov Junior Front-end Developer  upd.pdf";
 
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import { useComponent } from "../../zustand/store";
