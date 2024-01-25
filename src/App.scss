@@ -1,7 +1,7 @@
 body::after,
 body::before {
   content: "";
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
@@ -18,7 +18,15 @@ body::before {
 }
 
 body {
-  overflow: hidden;
+  height: 100%;
+  overflow-x: hidden;
+  // @media (max-width: 955px) {
+  //   overflow: hidden;
+  // }
+}
+
+.svg-grain {
+  display: none;
 }
 
 .main-container {
